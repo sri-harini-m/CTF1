@@ -2,6 +2,7 @@ version: '3.8'
 services:
   web:
     build: ./web
+    dockerfile: Dockerfile
     ports:
       - "80:80"
     depends_on:
