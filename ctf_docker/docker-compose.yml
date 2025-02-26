@@ -1,8 +1,10 @@
 version: '3.8'
 services:
   web:
-    build: ./web
-    dockerfile: Dockerfile
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+
     ports:
       - "80:80"
     depends_on:
@@ -16,4 +18,3 @@ services:
       MYSQL_DATABASE: ctf_db
     volumes:
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-
